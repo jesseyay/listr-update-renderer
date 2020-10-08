@@ -55,7 +55,7 @@ class UpdateRenderer {
 			showSubtasks: true,
 			collapse: true,
       clearOutput: false,
-      truncateOutput: true,
+      truncateOutput: false,
 		}, options);
 	}
 
