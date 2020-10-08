@@ -31,7 +31,7 @@ const renderHelper = (tasks, options, level) => {
 
 				if (utils.isDefined(data)) {
 					const out = indentString(`${figures.arrowRight} ${data}`, level, '  ');
-					output.push(`   ${chalk.gray(cliTruncate(out, process.stdout.columns - 3))}`);
+					output.push(`   ${chalk.gray(options.truncateOutput ? cliTruncate(out, process.stdout.columns - 3) : out)}`);
 				}
 			}
 
@@ -54,7 +54,8 @@ class UpdateRenderer {
 		this._options = Object.assign({
 			showSubtasks: true,
 			collapse: true,
-			clearOutput: false
+      clearOutput: false,
+      truncateOutput: true,
 		}, options);
 	}
 
